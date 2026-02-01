@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# 🌐 Web Frontend – Chemical Equipment Parameter Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the **Web Frontend** for the **Chemical Equipment Parameter Visualizer**, developed as part of the **FOSSEE Internship Screening Task**.
 
-## Available Scripts
+The application allows users to upload CSV files, visualize chemical equipment analytics, and view historical datasets using charts and summary cards.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🧰 Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Framework:** React.js
+- **Charts:** Chart.js
+- **HTTP Client:** Axios
+- **Styling:** CSS (Custom Styling)
+- **Backend:** Django REST Framework
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ✨ Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- CSV upload interface
+- Summary cards for quick analytics
+- Bar charts for:
+  - Equipment type distribution
+  - Average flowrate, pressure, and temperature
+- Dataset history synced with backend
+- Authenticated API access
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Setup Instructions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1️⃣ Install Dependencies
+```bash
+npm install
+2️⃣ Start Development Server
+npm start
+Frontend will run at:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+http://localhost:3000/
+🔗 Backend Dependency
+Ensure the backend server is running at:
 
-### `npm run eject`
+http://127.0.0.1:8000/
+APIs used:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+/api/upload/
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+/api/history/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+/api/report/<id>/
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🧪 Testing
+Upload sample_equipment_data.csv
 
-## Learn More
+Verify charts and summary update automatically
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Ensure authentication is working
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+📌 Notes
+Backend must be running before starting frontend
 
-### Code Splitting
+Charts update dynamically after CSV upload
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Same backend is shared with Desktop frontend
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🧑‍💻 Author
+Sohom Bose
+FOSSEE Internship Applicant
