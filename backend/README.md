@@ -1,77 +1,117 @@
-📘 Backend – Chemical Equipment Parameter Visualizer
+# 📘 Backend – Chemical Equipment Parameter Visualizer
 
-This backend is part of the FOSSEE Internship Screening Task.
+This backend is part of the **FOSSEE Internship Screening Task**.  
 It provides REST APIs for uploading chemical equipment data, generating analytics, maintaining dataset history, and securing access using authentication.
 
-🧰 Tech Stack
+---
 
-Framework: Django
+## 🧰 Tech Stack
 
-API: Django REST Framework
+- **Framework:** Django  
+- **API:** Django REST Framework  
+- **Data Processing:** Pandas  
+- **Database:** SQLite  
+- **Authentication:** Basic Authentication  
+- **PDF Generation:** ReportLab  
 
-Data Processing: Pandas
+---
 
-Database: SQLite
+## 📂 Features Implemented
 
-Authentication: Basic Authentication
+- CSV upload API for chemical equipment data  
+- Automatic data validation and analytics computation  
+- Summary statistics (total count, averages, type distribution)  
+- Dataset history management (stores **last 5 uploads only**)  
+- Secure API access using **Basic Authentication**  
+- PDF report generation from stored dataset  
 
-PDF Generation: ReportLab
+---
 
-📂 Features Implemented
+## 📄 CSV Format Required
 
-CSV upload API for chemical equipment data
+The uploaded CSV file **must contain the following columns**:
 
-Automatic data validation and analytics computation
+- Equipment Name  
+- Type  
+- Flowrate  
+- Pressure  
+- Temperature  
 
-Summary statistics (count, averages, type distribution)
+A sample CSV file is provided in the repository root:
 
-Dataset history (stores last 5 uploads only)
+# 📘 Backend – Chemical Equipment Parameter Visualizer
 
-Secure API access using Basic Authentication
+This backend is part of the **FOSSEE Internship Screening Task**.  
+It provides REST APIs for uploading chemical equipment data, generating analytics, maintaining dataset history, and securing access using authentication.
 
-PDF report generation from stored dataset
+---
 
-📄 CSV Format Required
+## 🧰 Tech Stack
 
-The uploaded CSV file must contain the following columns:
+- **Framework:** Django  
+- **API:** Django REST Framework  
+- **Data Processing:** Pandas  
+- **Database:** SQLite  
+- **Authentication:** Basic Authentication  
+- **PDF Generation:** ReportLab  
 
-Equipment Name
-Type
-Flowrate
-Pressure
-Temperature
+---
 
+## 📂 Features Implemented
 
-A sample file is provided in the root repository:
+- CSV upload API for chemical equipment data  
+- Automatic data validation and analytics computation  
+- Summary statistics (total count, averages, type distribution)  
+- Dataset history management (stores **last 5 uploads only**)  
+- Secure API access using **Basic Authentication**  
+- PDF report generation from stored dataset  
+
+---
+
+## 📄 CSV Format Required
+
+The uploaded CSV file **must contain the following columns**:
+
+- Equipment Name  
+- Type  
+- Flowrate  
+- Pressure  
+- Temperature  
+
+A sample CSV file is provided in the repository root:
 
 sample_equipment_data.csv
 
-🚀 Setup Instructions
-1️⃣ Create Virtual Environment
+
+---
+
+## 🚀 Setup Instructions
+
+### 1️⃣ Create Virtual Environment
+```bash
 python -m venv venv
 
+Activate Virtual Environment
 
-Activate:
-
-Windows:
+Windows
 
 venv\Scripts\activate
 
 
-Linux/Mac:
+Linux / macOS
 
 source venv/bin/activate
 
 2️⃣ Install Dependencies
 pip install -r requirements.txt
 
-3️⃣ Run Migrations
+3️⃣ Run Database Migrations
 python manage.py migrate
 
 4️⃣ Create Superuser (For Authentication)
 python manage.py createsuperuser
 
-5️⃣ Start Server
+5️⃣ Start Development Server
 python manage.py runserver
 
 
@@ -81,36 +121,38 @@ http://127.0.0.1:8000/
 
 🔐 Authentication
 
-All APIs are protected using Basic Authentication.
+All APIs are protected using Basic Authentication
 
-Use Django superuser credentials to access APIs.
+Use Django superuser credentials to access the APIs
+
+Authentication is required for both Web and Desktop clients
 
 🔌 API Endpoints
-Upload CSV
+📤 Upload CSV
 POST /api/upload/
 
 
 Auth: Required
 
-Body: multipart/form-data
+Body Type: multipart/form-data
 
-Key: file
+Key: file (CSV file)
 
-Dataset History
+📜 Dataset History
 GET /api/history/
 
 
 Auth: Required
 
-Returns last 5 uploaded datasets
+Returns the last 5 uploaded datasets with summary analytics
 
-PDF Report
+📄 PDF Report
 GET /api/report/<dataset_id>/
 
 
 Auth: Required
 
-Downloads PDF report for selected dataset
+Downloads a PDF analytics report for the selected dataset
 
 🧪 Testing
 
@@ -118,17 +160,23 @@ APIs can be tested using:
 
 Postman
 
-Browser (GET endpoints)
+Browser (for GET endpoints)
+
+Web Frontend
+
+Desktop Frontend (PyQt5)
 
 📌 Notes
 
-Old datasets are automatically deleted when count exceeds 5
+Old datasets are automatically deleted when dataset count exceeds 5
 
 SQLite is used for simplicity as per task requirement
 
-Backend is shared by both Web and Desktop frontends
+This backend is shared by both Web and Desktop frontends
 
 🧑‍💻 Author
 
 Sohom Bose
 FOSSEE Internship Applicant
+
+
